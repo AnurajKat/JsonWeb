@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JSON Display</title>
+<style>
+  /* Base styles */
+  body {
+    font-family: Arial, sans-serif;
+    font-size: 20px; /* Increased font size */
+    background-color: #fdf6e3; /* Gentle light mode background color */
+    color: #657b83; /* Updated light mode text color for better contrast */
+    line-height: 1.6; /* Improved line spacing for readability */
+  }
+  .json-container {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    background-color: transparent; /* Make container transparent */
+    padding: 20px;
+    margin: 20px;
+    border-radius: 5px;
+  }
+  a {
+    color: #1a0dab; /* Hyperlink color */
+  }
+
+  .bold-key{
+    font-weight: bold;
+  }
+
+  /* Responsive design */
+  @media (max-width: 768px) {
+    body {
+      font-size: 15px; /* Smaller font size for smaller screens */
+    }
+  }
+
+  /* Dark mode styles */
+  @media (prefers-color-scheme: dark) {
+    body {
+      background-color: #121212; /* Dark mode background color */
+      color: #e0e0e0; /* Dark mode text color */
+    }
+    a {
+      color: #8ab4f8; /* Dark mode hyperlink color */
+    }
+  }
+</style>
+</head>
+<body>
+<div class="json-container">
+  <!-- JSON data will be displayed here -->
+</div>
+
+<script>
+  function customReplacer(key, value) {
+    if (typeof value === "string") {
+      // Regular expression to match URLs
+      const urlRegex = /(https?:\/\/[^\s]+)/g;
+      const replacedValue = value.replace(urlRegex, (match) => {
+        console.log(`match: ${match}`)
+        return '<a href="'+match+'" target="_blank">'+match+'</a>'
+      });
+      console.log(replacedValue)
+      return replacedValue
+    }
+    return value;
+  }
+
+    // Function to display JSON data
+    function displayJSON(jsonData) {
+      const jsonContainer = document.querySelector('.json-container');
+      let formattedJson = JSON.stringify(jsonData, customReplacer, 2);
+       formattedJson = formattedJson.replace(/\\\\u\{([0-9a-fA-F]+)\}/gu, (match, unicode) => {
+          return String.fromCodePoint(parseInt(unicode, 16));
+        });
+
+      formattedJson = formattedJson.replace(/"([^"]+)":/g, (match)=>{
+        return '<span class="bold-key">'+match+'</span>'
+      });
+
+
+      jsonContainer.innerHTML = formattedJson.replace(/\\n/g, '<br>');//.replace(/ /g, '&nbsp;');
+    }
+  
+    // Fetch JSON data from a server
+    function fetchJSONData() {
+      fetch(" ${ author_name } ") // Replace with the actual URL
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Network response was not ok ' + response.statusText);
+          }
+          var jdat = response.json();
+          //console.log(jdat);
+          return jdat;
+        })
+        .then(jsonData => displayJSON(jsonData))
+        .catch(error => {
+          console.error('There has been a problem with your fetch operation:', error);
+        });
+    }
+  
+    // Call the fetch function on page load
+    window.onload = fetchJSONData;
+  </script>
+
+</body>
+</html>
