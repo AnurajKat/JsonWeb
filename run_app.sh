@@ -15,9 +15,9 @@ source .env
 if [[ "$DEBUG_ENABLED" == "true" ]]; then
     APP_CMD="dev"
 else
-    APP_CMP="run" 
+    APP_CMD="run" 
 fi
 
 LOG_FILE="${DIR}/logs/fastapi_$(date +"%d.%m.%Y").log"
 
-fastapi $APP_CMD src/app.py
+nohup fastapi $APP_CMD src/app.py
