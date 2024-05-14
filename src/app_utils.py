@@ -3,7 +3,6 @@ import os
 import json
 from dotenv import load_dotenv
 from fastapi import Request
-load_dotenv()
 data_src = os.environ.get("APP_DATA_SRC")
 data_location = os.environ.get("APP_DATA_LOCATION")
 possible_sources=["file_system","document_datastore","Relational_database"]
@@ -29,7 +28,9 @@ def generate_json_link(user_name:str, request_url:str):
 def get_json(user_name:str):
     obj: str
     if data_src == possible_sources[0]:
+        print(data_location)
         filename = "{}/{}.json".format(data_location,user_name)
+        print(filename)
         with open(filename,"r") as fileContent:
             obj = fileContent.read()
     return json.loads(obj)

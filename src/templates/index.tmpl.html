@@ -9,8 +9,8 @@
   body {
     font-family: Arial, sans-serif;
     font-size: 20px; /* Increased font size */
-    background-color: #fdf6e3; /* Gentle light mode background color */
-    color: #657b83; /* Updated light mode text color for better contrast */
+    background-color: #fdf5df; /* Gentle light mode background color */
+    color: #2f2f2f; /* Updated light mode text color for better contrast */
     line-height: 1.6; /* Improved line spacing for readability */
   }
   .json-container {
@@ -71,7 +71,7 @@
     // Function to display JSON data
     function displayJSON(jsonData) {
       const jsonContainer = document.querySelector('.json-container');
-      let formattedJson = JSON.stringify(jsonData, customReplacer, 2);
+      let formattedJson = JSON.stringify(jsonData, customReplacer, 4);
        formattedJson = formattedJson.replace(/\\\\u\{([0-9a-fA-F]+)\}/gu, (match, unicode) => {
           return String.fromCodePoint(parseInt(unicode, 16));
         });

@@ -7,8 +7,6 @@ from dotenv import load_dotenv
 import app_utils
 app = FastAPI()
 render_engine = app_utils.get_env()
-load_dotenv()
-
 
 @app.get("/about/{author_name}", response_class=HTMLResponse)
 async def root(author_name: str,request: Request):
@@ -21,4 +19,4 @@ async def getAuthorDetails(author_name: str):
 
 @app.get("/me", response_class=HTMLResponse)
 async def about_me(request: Request):
-    return app_utils.render_html("anuraj",render_engine,request)
+    return app_utils.render_html(os.environ.get("APP_DATA_OWNER"),render_engine,request)

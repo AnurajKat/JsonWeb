@@ -1,22 +1,21 @@
 {
-    "basics": {
-        "name": "Anuraj Kathait",
-        "label": "Software Engineer",
-        "email": "anurajkathait@outlook.com",
-        "phone": "+91 9619618485",
-        "website": "https://about.anuraj.site",
-        "summary": "With four years in backend development, this dynamic software engineer excels at automating tasks, enhancing efficiency, and contributing to robust systems. Their passion for technology and love for coffee drive their pursuit of excellence and innovation. A valuable asset to any team! \\u{1F680} \\u{2615}"
+    "Basics": {
+        "Name": "Anuraj Kathait",
+        "Label": "Software Engineer",
+        "Email": "anurajkathait@outlook.com",
+        "Phone": "+91 9619618485",
+        "Website": "https://about.anuraj.site",
+        "Summary": "With four years in backend development, this dynamic software engineer excels at automating tasks, enhancing efficiency, and contributing to robust systems. Their passion for technology and love for coffee drive their pursuit of excellence and innovation. A valuable asset to any team! \\u{1F680} \\u{2615}"
     },
-    "work": [
+    "Work": [
         {
-            "company": "Amdocs",
-            "position": "Software Engineer",
-            "startDate": "20-09-2020",
-            "endDate": "Present",
-            "summary": "I have contributed to the development of Amdocs Catalog One and am currently engaged with the Britebill delivery team, serving notable clients including Vodafone Germany, AT&T, and Bell Canada. Additionally, I have independently developed tools to streamline incident investigation, enhancing our development workflows and service delivery efficiency."
+            "Company": "Amdocs",
+            "Position": "Software Engineer",
+            "Period": "20/09/2020 - Present",
+            "Summary": "I have contributed to the development of Amdocs Catalog One and am currently engaged with the Britebill delivery team, serving notable clients including Vodafone Germany, AT&T, and Bell Canada. Additionally, I have independently developed tools to streamline incident investigation, enhancing our development workflows and service delivery efficiency."
         }
     ],
-    "skills": [
+    "Skills": [
         "Java",
         "Linux / Bash",
         "Technical Writing",
@@ -28,21 +27,24 @@
         "Prompt Engineering",
         "Python"
     ],
-    "education": [
+    "Education": [
         {
-            "institution": "sardar Patel Institute of Technology, Mumbai",
-            "area": "Computer Science",
-            "studyType": "Master's Degree",
-            "startDate": "2018",
-            "endDate": "2020"
+            "Institution": "sardar Patel Institute of Technology, Mumbai",
+            "Area": "Computer Science",
+            "StudyType": "Master's Degree",
+            "Period": "2018 -2020"
         },
         {
-            "institution": "Mukesh Patel School of Technology Management and Engineering, Mumbai",
-            "area": "Computer Science",
-            "studyType": "Bachelor's Degree",
-            "startDate": "2014",
-            "endDate": "2018"
+            "Institution": "Mukesh Patel School of Technology Management and Engineering, Mumbai",
+            "Area": "Computer Science",
+            "StudyType": "Bachelor's Degree",
+            "Period": "2014 - 2018"
         }
+    ],
+    "Hobbies": [
+        "Video Games",
+        "Brewing Coffee",
+        "Reading Tech Articles",
+        "Working out"
     ]
-    
 }
