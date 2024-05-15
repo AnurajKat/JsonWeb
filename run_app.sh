@@ -10,14 +10,18 @@ DIR=$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )
 # source ${DIR}/.env
 set -x
 cd $DIR
-source .env
+source ${DIR}/.env
 
 if [[ "$DEBUG_ENABLED" == "true" ]]; then
+    echo "Debug mode is enabled."
     APP_CMD="dev"
 else
     APP_CMD="run" 
 fi
+echo $DEBUG_ENABLED
+echo $JSON_APP_OWNER
+echo $APP_BASE_URL
+echo $APP_DATA_LOCATION
+echo $APP_DATA_SRC
 
-LOG_FILE="${DIR}/logs/fastapi_$(date +"%d.%m.%Y").log"
-
-nohup fastapi $APP_CMD src/app.py
+nohup fastapi $APP_CMD src/app.py 
