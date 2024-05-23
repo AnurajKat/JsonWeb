@@ -1,7 +1,10 @@
 {
     "Basics": {
         "Name": "Anuraj Kathait",
-        "Label": "Software Engineer",
+        "Label": [
+            "Software Engineer",
+            "Back-End Engineer"
+        ],
         "Email": "anurajkathait@outlook.com",
         "Phone": "+91 9619618485",
         "Website": "https://about.anuraj.site",

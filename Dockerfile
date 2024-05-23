@@ -4,12 +4,13 @@ ENV APP_DATA_LOCATION=data
 ENV APP_DATA_SRC=file_system
 ENV APP_PORT=8000
 WORKDIR /app
+COPY requirements.txt ./
+RUN pip install -r requirements.txt
+
 COPY src src
 COPY data data
-COPY requirements.txt ./
 COPY run_app.sh ./
 
-RUN pip install -r requirements.txt
 LABEL site.anuraj.json.resume.version=1
 LABEL site.anuraj.is.beta=true
 

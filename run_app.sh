@@ -24,4 +24,4 @@ echo $APP_BASE_URL
 echo $APP_DATA_LOCATION
 echo $APP_DATA_SRC
 
-nohup fastapi $APP_CMD src/app.py 
+python src/app.py
